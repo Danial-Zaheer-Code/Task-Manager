@@ -13,7 +13,7 @@ class TaskManager:
     def write_to_file(self):
         """write all the Tasks to the .json file"""
         
-        #Coverting all objects to string format and storin in list "data"
+        #Coverting all objects to string format and storing in list "data"
         data = []
         for t in self.tasks:
             data.append(t.__repr__())
@@ -44,8 +44,12 @@ class TaskManager:
     def view_tasks(self):
         """Diplay all tasks on console in a formatted manner"""
         if self.tasks.__len__() != 0:
+            print("")
             for task in self.tasks:
                 print(task)
+                print("")
+        else:
+            print("\nNothin to show")
         
     def search_task(self,title):
         """Search a task by title and return its index"""
@@ -56,6 +60,38 @@ class TaskManager:
             i += 1
         return -1       #if not found return -1
 
+    def delete_task(self,title):
+        """Delete a task by title"""
+        index = self.search_task(title)     #searching for task
+        if index == -1:         #if not found
+            print("Not Found\n")
+        else:                   #if found
+            del self.tasks[index]
+            print("Deleted Succesfully!\n")
 
 
+    def updateTask(self,title):
+        """Update a task by title"""
+        
+        index = self.search_task(title)     #searchong for task
+        if index == -1:
+            print("Not Found\n")    #if not found
+        else:
+            while True:
+                print("\n1. Update Title")            #providing menu
+                print("2. Update Descritpion")
+                print("q. quit")
+                
+                choice = input("Enter your choice: ")   #Taking user choice
+
+                if choice == '1':
+                    str = input("Enter new Title: ")
+                    self.tasks[index].title = str.upper()
+                elif choice == "2":
+                    str = input("Enter new Descritpion: ")
+                    self.tasks[index].description = str
+                elif choice == "q":
+                    break
+                else:
+                    print("\nWrong Input\n")
 
