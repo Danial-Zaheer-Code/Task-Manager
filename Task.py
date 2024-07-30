@@ -15,7 +15,7 @@ class Task:
         """To display yo end user"""
         return f"{self.title}:\n\t{self.description}\n"
     
-    #Getter/Seters
+    #Getter/Setters for attributes
     @property
     def title(self):
         return self._title
@@ -31,12 +31,15 @@ class Task:
     @description.setter
     def description(self, description):
         self._description = description
+    #END getter/setters
 
+    #Class Methods
     @classmethod
     def from_str(cls,str):
         """Covert a string back to Task Object"""
         title,description = str.split('-')
         return cls(title,description)
+    #End Class Methods
     
 
 
