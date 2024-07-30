@@ -1,0 +1,53 @@
+This file explains all classes with their attributes and methods
+
+Task Class:
+    Attributes:
+        title           //Store the task title
+        description     //Store the task description 
+    Methods:
+        __init__(title, description)        //Initialzie the attributes
+            return none
+        
+        __repr__()  //Convert a task object to a string format in order to save it in .json file
+            return a string in "Title-Descritpion" format
+        
+        __str__()   //convert Task object in to a string desplayable to user
+            return a string in "title\n\tdescritpion" format
+
+        from_str(string)  //A class method to convert a string back into task object
+            return a Task object
+
+        //Getter and Setters for both Attributes
+//End of task class
+
+
+Task_Manger Class:
+    Attributes:
+        tasks       //A list of task objects
+    Methods:
+        __init__()  //Initialzie an empty list
+            return none
+        
+        write_to_file() //write all tasks in .json file
+            return none
+
+        load_from_file()    //load the data from .json file
+            return none
+
+        add_task()      //Add a new task to list. Title must not be dublicated. Ask for user input inside function
+            return none
+
+        view_tasks()    //View all task.
+            return none
+
+        search_task() //search a task by title
+            return index of that task       //beacuse we may need to modify that task
+
+        delete_task() //delete a task by title. Use search_task() function to find it.
+            return none
+
+        update_task()   //Update a task. Use search_task() function to find it
+            return none
+//END Task_Manger
+
+

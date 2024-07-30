@@ -12,7 +12,7 @@ class Task:
         return f"{self.title}-{self.description}"
 
     def __str__(self):
-        """To display yo end user"""
+        """Display to end user"""
         return f"{self.title}:\n\t{self.description}\n"
     
     #Getter/Setters for attributes
