@@ -4,11 +4,11 @@ class Task:
     
     def __init__(self,title,description):
         """Initialize the member variable"""
-        self.title = title
+        self.title = title.upper()
         self.description = description
 
     def __str__(self):
-        return f"Title: {self.title}\nDescription: {self.description}"
+        return f"{self.title}:\n\t{self.description}\n"
     
     #Getter/Seters
     @property
@@ -17,7 +17,7 @@ class Task:
 
     @title.setter
     def title(self, title):
-        self._title = title
+        self._title = title.upper()
 
     @property
     def description(self):
@@ -27,13 +27,3 @@ class Task:
     def description(self, description):
         self._description = description
 
-
-
-a = Task("D","NNNNN")
-
-print("1:",a)
-
-
-    
-a.title = "n"
-print("1:",a)
