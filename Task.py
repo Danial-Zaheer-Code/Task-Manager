@@ -35,4 +35,8 @@ class Task:
     @classmethod
     def from_str(cls,str):
         """Covert a string back to Task Object"""
-        tile,description = str.split('-')
+        title,description = str.split('-')
+        return cls(title,description)
+    
+
+
