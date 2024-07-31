@@ -40,6 +40,17 @@ class Task:
         title,description = str.split('-')
         return cls(title,description)
     #End Class Methods
-    
+
+#End Task Class
+
+
+
+#Some extra functions
+def createTask():
+    """This function will input a task from user and return it"""
+    title = input("Enter the title: ")
+    description = input("Descritpion: ")
+
+    return Task(title,description)
 
 

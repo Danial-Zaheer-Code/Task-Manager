@@ -23,10 +23,14 @@ class TaskManager:
             json.dump(data,obj)
     
     def load_from_file(self):
-        """Rading all data from .json file as a list f strings and then convert it to list of Task objects"""
+        """Rading all data from .json file as a list of strings and then convert it to list of Task objects"""
         try:
-            with open("Task.json") as obj:  #Opening the task file if it exist
-                data = json.load(obj)
+            with open("Tasks.json") as obj:  #Opening the task file if it exist
+                #checking for empty file 
+                try:                            
+                    data = json.load(obj)       #
+                except json.JSONDecodeError:
+                    data = []
         except FileNotFoundError:   #if the file don't exist than we will just pass
             pass
         else:               #if the file exist than convert all the data to list of Task objects
@@ -70,7 +74,7 @@ class TaskManager:
             print("Deleted Succesfully!\n")
 
 
-    def updateTask(self,title):
+    def update_task(self,title):
         """Update a task by title"""
         
         index = self.search_task(title)     #searchong for task
@@ -86,7 +90,7 @@ class TaskManager:
 
                 if choice == '1':
                     str = input("Enter new Title: ")
-                    self.tasks[index].title = str.upper()
+                    self.tasks[index].title = str
                 elif choice == "2":
                     str = input("Enter new Descritpion: ")
                     self.tasks[index].description = str
@@ -95,3 +99,4 @@ class TaskManager:
                 else:
                     print("\nWrong Input\n")
 
+#End Task Manager Class
