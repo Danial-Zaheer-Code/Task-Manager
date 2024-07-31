@@ -51,3 +51,5 @@ Task_Manger Class:
 //END Task_Manger
 
 
+
+->At the time being, I am restricting dublicate titles.

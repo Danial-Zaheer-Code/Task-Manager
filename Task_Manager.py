@@ -57,6 +57,7 @@ class TaskManager:
         
     def search_task(self,title):
         """Search a task by title and return its index"""
+        title = title.upper()
         i = 0
         while i < self.tasks.__len__():     #Iterating through the task list
             if self.tasks[i].title == title:
