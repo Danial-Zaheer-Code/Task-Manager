@@ -43,7 +43,7 @@ class TaskManager:
         if isinstance(task,Task):       #if passed object is an instance of Task class
             self.tasks.append(task)
         else:
-            raise ValueError("Invalid Type passed int add_task")
+            raise ValueError("Invalid Type passed in add_task")
         
     def view_tasks(self):
         """Diplay all tasks on console in a formatted manner"""
